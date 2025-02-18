@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      booking:
+        specifier: 'file:'
+        version: 'file:'
     devDependencies:
       prettier:
         specifier: ^3.5.0
@@ -55,44 +59,11 @@ importers:
         specifier: 5.7.3
         version: 5.7.3
 
-  apps/web:
-    dependencies:
-      '@repo/ui':
-        specifier: workspace:*
-        version: link:../../packages/ui
-      next:
-        specifier: ^15.1.6
-        version: 15.1.6(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      react:
-        specifier: ^19.0.0
-        version: 19.0.0
-      react-dom:
-        specifier: ^19.0.0
-        version: 19.0.0(react@19.0.0)
-    devDependencies:
-      '@repo/eslint-config':
-        specifier: workspace:*
-        version: link:../../packages/eslint-config
-      '@repo/typescript-config':
-        specifier: workspace:*
-        version: link:../../packages/typescript-config
-      '@types/node':
-        specifier: ^22
-        version: 22.13.0
-      '@types/react':
-        specifier: 19.0.8
-        version: 19.0.8
-      '@types/react-dom':
-        specifier: 19.0.3
-        version: 19.0.3(@types/react@19.0.8)
-      eslint:
-        specifier: ^9.20.0
-        version: 9.20.0
-      typescript:
-        specifier: 5.7.3
-        version: 5.7.3
-
   packages/eslint-config:
+    dependencies:
+      '@repo/eslint-config':
+        specifier: 'file:'
+        version: 'link:'
     devDependencies:
       '@eslint/js':
         specifier: ^9.20.0
@@ -128,7 +99,11 @@ importers:
         specifier: ^8.24.0
         version: 8.24.0(eslint@9.20.0)(typescript@5.7.3)
 
-  packages/typescript-config: {}
+  packages/typescript-config:
+    dependencies:
+      '@repo/typescript-config':
+        specifier: 'file:'
+        version: 'link:'
 
   packages/ui:
     dependencies:
@@ -627,6 +602,10 @@ packages:
 
   bl@4.1.0:
     resolution: {integrity: sha512-1W07cM9gS6DcLperZfFSj+bWLtaPGSOHWhPiGzXmvVJbRLdG82sH/Kn8EtW1VqWVA54AKf2h5k5BbnIbwF3h6w==}
+
+  'booking@file:':
+    resolution: {directory: '', type: directory}
+    engines: {node: '>=18'}
 
   brace-expansion@1.1.11:
     resolution: {integrity: sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==}
@@ -2585,6 +2564,8 @@ snapshots:
       buffer: 5.7.1
       inherits: 2.0.4
       readable-stream: 3.6.2
+
+  'booking@file:': {}
 
   brace-expansion@1.1.11:
     dependencies:
